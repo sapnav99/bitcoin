@@ -7,12 +7,16 @@ import './Card.css';
 
 export default function Card() {
   const [activeTab, setActiveTab] = useState('Day');
+  const [showOptions, setShowOptions] = useState(false);
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
 
-  // Sample data for each tab
+  const handleToggleOptions = () => {
+    setShowOptions(!showOptions);
+  };
+
   const chartData = {
     Day: [
       { name: '00:00', value: 400 },
@@ -64,7 +68,7 @@ export default function Card() {
             <div className="header-content">
               <img src={bicon} className="card-img-top" alt="Bitcoin" />
               <div>
-                <label >Bitcoin</label>
+                <label>Bitcoin</label>
                 <label style={{ marginLeft: '150px' }}>BTC</label>
               </div>
             </div>
@@ -73,13 +77,21 @@ export default function Card() {
             <h1 className="card-text">3.529020 BTC</h1>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <p style={{textAlign:'left', marginRight:'130px' }}>$19.153 USD</p>
-            <span style={{ backgroundColor: 'red', padding: '5px 10px', borderRadius: '20px', textAlign:'right' }}>-2.32%</span>
+            <p style={{ textAlign: 'left', marginRight: '130px' }}>$19.153 USD</p>
+            <span style={{ backgroundColor: 'red', padding: '5px 10px', borderRadius: '20px', textAlign: 'right' }}>
+              -2.32%
+            </span>
           </div>
-          <div className="down-icon-container">
+          <div className="down-icon-container" onClick={handleToggleOptions}>
             <BsChevronCompactDown className="down-icon" />
           </div>
         </div>
+        {showOptions && (
+          <div className="options-container">
+            <button className="buy-button">Buy</button>
+            <button className="sell-button">Sell</button>
+          </div>
+        )}
       </div>
       <div>
         <Tabs activeTab={activeTab} handleTabChange={handleTabChange} />

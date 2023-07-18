@@ -95,4 +95,28 @@
   justify-content: center;
   margin: 10px auto 0;
 }
+.options-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.buy-button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sell-button {
+  padding: 8px 16px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
