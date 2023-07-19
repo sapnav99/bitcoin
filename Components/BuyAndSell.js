@@ -1,31 +1,21 @@
 import React from 'react';
 import { BsCurrencyDollar } from 'react-icons/bs';
-import './BuyAndSell.css'
+import './BuyAndSell.css';
 
 export default function BuyAndSell() {
   return (
-    <div className="card-container">
-      <div className="row">
-        <div className="col">
-          <div className="card">
-            <div className="card-content">
-              <BsCurrencyDollar className="card-icon" />
-              <div>
-              <label>Buy BTC</label>
-              </div>
-            </div>
-          </div>
+    <div className="flex-container">
+      <div className="flex-child">
+        <div className="icon-container">
+          <BsCurrencyDollar className="card-icon1" />
         </div>
-        <div className="col">
-          <div className="card">
-            <div className="card-content">
-              <BsCurrencyDollar className="card-icon" />
-              <div>
-              <label>Sell BTC</label>
-              </div>
-            </div>
-          </div>
+        <p>Buy BTC</p>
+      </div>
+      <div className="flex-child">
+        <div className="icon-container">
+          <BsCurrencyDollar className="card-icon2" />
         </div>
+        <p>Sell BTC</p>
       </div>
     </div>
   );
